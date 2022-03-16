@@ -1,8 +1,8 @@
 SRC_PATH=./src/
 CC=gcc
 COMPILER_FLAGS = -g -c
-LINKER_FLAGS = `sdl2-config --cflags --libs` -llua -lm -lGL -lGLU -lGLEW
-INCLUDE_PATHS = -I. -I./src/ -I/usr/include/SDL2
+LINKER_FLAGS = `sdl2-config --cflags --libs` -llua -lm -framework OpenGL -lGLEW
+INCLUDE_PATHS = -I. -I./src/ -I/usr/include/SDL2 -I/usr/local/Cellar/lua/5.4.3/include/lua/
 LIBRARY_PATHS = -L/usr/lib -L.
 EXE=cadzinho
 
