@@ -4,6 +4,13 @@ project(CadZinho)
 
 add_definitions("-DPLATFORM_${CMAKE_SYSTEM_NAME}")
 
+if (CMAKE_SYSTEM_NAME MATCHES "Linux")
+  if(NOT DEFINED OpenGL_GL_PREFERENCE)
+    set(OpenGL_GL_PREFERENCE "LEGACY")
+  endif()
+  message(STATUS "Using ${OpenGL_GL_PREFERENCE} OpenGL ABI on Linux")
+endif()
+
 find_package(OpenGL REQUIRED)
 message(STATUS "OpenGL found")
 find_package(GLEW REQUIRED)
